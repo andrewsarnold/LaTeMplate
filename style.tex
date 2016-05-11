@@ -35,11 +35,17 @@
 % Hyperref
 \usepackage{hyperref}
 \hypersetup{
-	bookmarks,
 	colorlinks,
 	linkcolor={accent},
 	citecolor={accent},
 	urlcolor={accent}
+}
+
+% Chapters that are regular chapters
+\newcommand{\chap}[1]{
+	\chapter{#1}
+	\markboth{\uppercase{#1}}{}
+	\thispagestyle{empty}
 }
 
 % Chapters that aren't really chapters
