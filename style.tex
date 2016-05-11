@@ -7,6 +7,13 @@
 \renewcommand{\sfdefault}{pag} % Sans serif type: Avant Garde
 \usepackage{sourcecodepro} % Monospace type: Source Code Pro
 
+% Other text formatting
+\sloppy
+\frenchspacing
+
+% Don't number subsections
+\setcounter{secnumdepth}{0}
+
 % Headers / footers
 \usepackage{fancyhdr}
 
@@ -21,4 +28,12 @@
   linkcolor={accent},
   citecolor={accent},
   urlcolor={accent}
+}
+
+% Chapters that aren't really chapters
+\newcommand{\nonchap}[1]{
+	\chapter*{#1}
+	\markboth{\uppercase{#1}}{}
+	\addcontentsline{toc}{chapter}{#1}
+	\thispagestyle{empty}
 }

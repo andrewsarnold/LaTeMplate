@@ -3,13 +3,14 @@
 \input{style.tex}
 
 \begin{document}
-
 \input{title.tex}
 
 \pagestyle{fancyplain}
-\pdfbookmark{Contents}{Contents}
 \tableofcontents
+\phantomsection
+\pdfbookmark{Contents}{Contents}
 
+\input{preface.tex}
 \input{loremipsum.tex}
 
 \end{document}
