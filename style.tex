@@ -10,6 +10,10 @@
 \renewcommand{\sfdefault}{pag} % Sans serif type: Avant Garde
 \usepackage{sourcecodepro} % Monospace type: Source Code Pro
 
+% Colors
+\usepackage{color}
+\definecolor{accent}{rgb}{0.078,0.506,0.721}
+
 % Special font for section headers
 \usepackage{sectsty}
 \partfont{\sffamily\color{accent}}
@@ -27,10 +31,8 @@
 
 % Headers / footers
 \usepackage{fancyhdr}
-
-% Colors
-\usepackage{color}
-\definecolor{accent}{rgb}{0.078,0.506,0.721}
+\fancyhf{} % Clear the header and footer (we'll define our own below)
+\renewcommand{\headrulewidth}{0pt} % Remove line at top of page
 
 % Hyperref
 \usepackage{hyperref}
@@ -41,17 +43,29 @@
 	urlcolor={accent}
 }
 
+% Parts
+\newcommand{\apart}[1]{\part{#1}\label{#1}}
+
 % Chapters that are regular chapters
 \newcommand{\chap}[1]{
 	\chapter{#1}
-	\markboth{\uppercase{#1}}{}
 	\thispagestyle{empty}
+	\chapfooter{#1}
 }
 
 % Chapters that aren't really chapters
 \newcommand{\nonchap}[1]{
 	\chapter*{#1}
-	\markboth{\uppercase{#1}}{}
 	\addcontentsline{toc}{chapter}{#1}
 	\thispagestyle{empty}
+	\chapfooter{#1}
 }
+
+\newcommand{\chapfooter}[1]{\setcounter{footnote}{0}
+\lfoot[\fancyplain{}{\color{accent}\textbf{\thepage} \hspace{1em} \small{#1 \hspace{1em} \textbf{\nouppercase{\rightmark}}}}]{}
+\rfoot[]{\fancyplain{}{\color{accent}\small{\textbf{\nouppercase{\rightmark}} \hspace{1em} #1} \hspace{1em} \textbf{\thepage}}}}
+
+% Symbolic footnotes
+\usepackage{perpage}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\MakePerPage{footnote}
