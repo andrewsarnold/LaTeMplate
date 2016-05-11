@@ -1,11 +1,22 @@
 % Page margins
 \usepackage[top=0.7in, bottom=1.1in, left=0.9in, right=0.9in]{geometry}
 
+% Cover image
+\usepackage{incgraph}
+
 % Font
 \usepackage[T1]{fontenc}
 \renewcommand{\rmdefault}{ppl} % Serif type: Palatino
 \renewcommand{\sfdefault}{pag} % Sans serif type: Avant Garde
 \usepackage{sourcecodepro} % Monospace type: Source Code Pro
+
+% Special font for section headers
+\usepackage{sectsty}
+\partfont{\sffamily\color{accent}}
+\chapterfont{\sffamily\color{accent}}
+\sectionfont{\sffamily\color{accent}}
+\subsectionfont{\sffamily\color{accent}}
+\subsubsectionfont{\sffamily\color{accent}}
 
 % Other text formatting
 \sloppy
@@ -23,11 +34,12 @@
 
 % Hyperref
 \usepackage{hyperref}
-\hypersetup {
-  colorlinks,
-  linkcolor={accent},
-  citecolor={accent},
-  urlcolor={accent}
+\hypersetup{
+	bookmarks,
+	colorlinks,
+	linkcolor={accent},
+	citecolor={accent},
+	urlcolor={accent}
 }
 
 % Chapters that aren't really chapters

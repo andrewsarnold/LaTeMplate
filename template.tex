@@ -3,14 +3,20 @@
 \input{style.tex}
 
 \begin{document}
-\input{title.tex}
 
-\pagestyle{fancyplain}
+\input{cover.tex}
+\input{title.tex}
+\input{dedication.tex}
+
+% Table of contents section
+\pagestyle{fancyplain} % Turn on page numbering
 \tableofcontents
-\phantomsection
+\phantomsection % Make an anchor for pdfbookmark
 \pdfbookmark{Contents}{Contents}
 
 \input{preface.tex}
 \input{loremipsum.tex}
 
+\bookmarksetup{startatroot} % Push extra chapters out to the root
+\input{references.tex}
 \end{document}
