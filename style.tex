@@ -3,8 +3,9 @@
 
 % Font
 \usepackage[T1]{fontenc}
-\usepackage{zi4}
-\renewcommand*\rmdefault{ppl}
+\renewcommand{\rmdefault}{ppl} % Serif type: Palatino
+\renewcommand{\sfdefault}{pag} % Sans serif type: Avant Garde
+\usepackage{sourcecodepro} % Monospace type: Source Code Pro
 
 % Headers / footers
 \usepackage{fancyhdr}
@@ -12,3 +13,12 @@
 % Colors
 \usepackage{color}
 \definecolor{accent}{rgb}{0.078,0.506,0.721}
+
+% Hyperref
+\usepackage{hyperref}
+\hypersetup {
+  colorlinks,
+  linkcolor={accent},
+  citecolor={accent},
+  urlcolor={accent}
+}
